@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:gravity="center_horizontal"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@android:id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:text="@string/ColorPicker_dialog_default_title"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.leonyr.view.colorpicker.view.ColorPickerView
+            android:id="@id/ColorPicker_color_picker_view"
+            style="@style/ColorPicker_ColorPickerViewStyle"
+            android:padding="16dp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp">
+
+            <Button
+                android:id="@android:id/button1"
+                style="@style/ColorPicker_PickerDialogButtonStyle"
+                android:layout_width="@dimen/ColorPicker_dialog_preview_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="@string/ColorPicker_dialog_default_confirm" />
+
+            <LinearLayout
+                android:layout_width="@dimen/ColorPicker_dialog_preview_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:orientation="vertical">
+
+                <com.leonyr.view.colorpicker.view.ColorPanelView
+                    android:id="@id/ColorPicker_color_panel_old"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ColorPicker_dialog_preview_height" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="↓"
+                    android:textSize="16sp" />
+
+                <com.leonyr.view.colorpicker.view.ColorPanelView
+                    android:id="@id/ColorPicker_color_panel_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ColorPicker_dialog_preview_height" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

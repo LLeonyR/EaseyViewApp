@@ -1,0 +1,6 @@
+<resources>
+
+    <!--  strings  -->
+    <string name="ColorPicker_dialog_default_title">Choice Color</string>
+    <string name="ColorPicker_dialog_default_confirm">OK</string>
+</resources>

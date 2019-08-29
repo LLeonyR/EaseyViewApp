@@ -29,6 +29,10 @@ dependencies {
     implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["recyclerview-v7"]
 
+
+    implementation rootProject.ext.leonyr["utils"]
+    implementation rootProject.ext.leonyr["MVVM-NONET"]
+
 //    implementation rootProject.ext.thirdLib["retrofit"]
 //    implementation rootProject.ext.thirdLib["rxandroid"]
 //    implementation rootProject.ext.thirdLib["okhttp"]

@@ -1,24 +1,15 @@
 package com.leonyr.easyutils;
 
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextPaint;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.CharacterStyle;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.StyleSpan;
-import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
-import com.leonyr.lib.luban.Luban;
-import com.leonyr.lib.luban.OnRenameListener;
 import com.leonyr.lib.utils.LogUtil;
-import com.leonyr.lib.utils.SpanUtil;
+import com.leonyr.view.colorpicker.dialog.ColorPickerDialogFragment;
 
 import java.util.Random;
 
@@ -43,12 +34,21 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_create).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int result = random.nextInt(100);
-                rvMain.scrollToPosition(0);
-                mAdapter.addItem(String.valueOf(result));
-                LogUtil.e(String.valueOf(result));
+                ColorPickerDialogFragment pickerDialogFragment = new ColorPickerDialogFragment();
+                pickerDialogFragment.setmListener(new ColorPickerDialogFragment.ColorPickerDialogListener() {
+                    @Override
+                    public void onColorSelected(int color) {
+                        LogUtil.e("color", "1111--" + color);
+                    }
+                });
+                pickerDialogFragment.show(getSupportFragmentManager(), "color");
             }
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        LogUtil.e("color", "1111");
+    }
 }

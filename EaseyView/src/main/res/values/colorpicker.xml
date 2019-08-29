@@ -1,0 +1,40 @@
+<resources>
+
+    <!--  attrs  -->
+    <declare-styleable name="ColorPicker">
+        <attr name="alphaChannelVisible" format="boolean|reference" />
+        <attr name="alphaChannelText" format="string|reference" />
+        <attr name="sliderColor" format="color|reference" />
+        <attr name="borderColor" format="color|reference" />
+    </declare-styleable>
+
+    <!--  dimens  -->
+    <dimen name="ColorPicker_required_padding">6dp</dimen>
+    <dimen name="ColorPicker_dialog_preview_width">65dp</dimen>
+    <dimen name="ColorPicker_dialog_preview_height">32dp</dimen>
+
+    <!--  ids  -->
+    <item type="id" name="ColorPicker_color_picker_view" />
+    <item type="id" name="ColorPicker_color_panel_old" />
+    <item type="id" name="ColorPicker_color_panel_new" />
+    <item type="id" name="ColorPicker_preference_preview_color_panel" />
+
+    <!--  styles  -->
+    <style name="ColorPicker_ColorPickerViewStyle">
+        <item name="android:layout_width">215dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <!-- Custom button style quite close to the one foind in material design. (borderless) -->
+    <style name="ColorPicker_PickerDialogButtonStyle">
+        <item name="android:background">@drawable/colorpicker_btn_background</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--  strings  -->
+    <string name="ColorPicker_dialog_default_title">选择颜色</string>
+    <string name="ColorPicker_dialog_default_confirm">确认</string>
+</resources>
